@@ -1,0 +1,243 @@
+@import "leaflet/dist/leaflet.css";
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.footer-upper-links a {
+  display: block;
+  text-decoration: none;
+  margin-bottom: 6px;   /* spacing between links */
+  cursor: pointer;
+  opacity: 0.8;
+  color: #fff !important;
+}
+
+.footer-upper-links a:hover{
+    opacity: 1;
+}
+
+.footer-upper-links h5{
+    margin-bottom: 15px;
+}
+
+.footer-lower-links p{
+  /* text-align: center; */
+  padding: 5px 15px;
+
+}
+
+.footer-img{
+  height: 1px;
+  width: 10px;;
+}
+
+
+/* Navbar css */
+/* Navbar link styles */
+.navbar .nav-link {
+  color: black !important;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+  color: #9a0606 !important;
+  text-decoration: underline;
+  text-decoration-color: #9a0606;
+}
+
+/* Input focus style */
+.custom-input:focus {
+  border-color: #9a0606 !important;
+  box-shadow: 0 0 0 0.2rem rgba(154, 6, 6, 0.25);
+  outline: none;
+}
+
+
+
+/* Button.css */
+.custom-btn {
+  background-color: #fff;          /* white background */
+  color: #9a0606;                  /* red text */
+  border: 2px solid #9a0606;       /* red border */
+  padding: 6px 16px;               /* spacing */
+  font-weight: 600;                /* bold text */
+  border-radius: 6px;              /* not capsule, slightly rounded */
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.custom-btn:hover {
+  background-color: #9a0606;       /* red background */
+  color: #fff;                     /* white text */
+}
+
+
+
+
+/* Login.css */
+/* ================= LOGIN PAGE ================= */
+
+/* Full Page Container */
+.login-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f8f9fa;
+}
+
+/* Login Card */
+.login-card {
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+/* Card Heading */
+.login-card h2 {
+  font-weight: 600;
+  color: #9a0606;
+  margin-bottom: 20px;
+}
+
+/* Inputs */
+.custom-input:focus {
+  border-color: #9a0606 !important;
+  box-shadow: 0 0 0 0.2rem rgba(154, 6, 6, 0.25);
+  outline: none;
+}
+
+/* Main Login Button */
+.login-btn {
+  background-color: #9a0606;
+  color: #fff;
+  border: 2px solid #9a0606;
+  padding: 10px;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  width: 100%;
+}
+
+.login-btn:hover {
+  background-color: #fff;
+  color: #9a0606;
+}
+
+/* Divider */
+.divider {
+  text-align: center;
+  margin: 20px 0;
+  font-size: 14px;
+  color: #888;
+  position: relative;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 40%;
+  height: 1px;
+  background: #ddd;
+}
+
+.divider::before {
+  left: 0;
+}
+
+.divider::after {
+  right: 0;
+}
+
+/* Social Login Buttons */
+.social-login {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.social-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.2s ease-in-out;
+  width: 100%;
+}
+
+.social-btn img {
+  width: 20px;
+  height: 20px;
+}
+
+/* Google Button */
+.social-btn.google {
+  background: #fff;
+  border: 1px solid #ddd;
+  color: #444;
+}
+
+.social-btn.google:hover {
+  border-color: #9a0606;
+  color: #9a0606;
+}
+
+/* Facebook Button */
+.social-btn.facebook {
+  background: #1877f2;
+  color: #fff;
+  border: 1px solid #1877f2;
+}
+
+.social-btn.facebook:hover {
+  background: #145dbf;
+  border-color: #145dbf;
+}
+
+/* Register link */
+.link {
+  color: #9a0606;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+  text-decoration-color: #9a0606;
+}
+
+
+
+/* About.css */
+
+.scroll-container img {
+  width: 100%;      /* make it fit container width */
+  max-width: 100%;  /* prevent overflow */
+  height: auto;     /* keep aspect ratio */
+  display: block;   /* remove inline spacing */
+  object-fit: cover; /* adjust fit nicely */
+}
+
+.about-hero {
+  padding: 15px 100px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.about-hero h1{
+  text-align: center;
+}
