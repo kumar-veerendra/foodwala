@@ -34,6 +34,8 @@ function Login() {
     <div className="login-container">
       <div className="login-card">
 
+        console.log("Client ID:", import.meta.env.VITE_GOOGLE_CLIENT_ID);
+
         <h2 className="text-center mb-4">Login</h2>
 
         <form onSubmit={handleSubmit}>
