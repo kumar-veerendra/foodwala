@@ -11,7 +11,7 @@ export const AuthProvider = ({ children }) => {
 
   const loadUser = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/auth/me", {
+      const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/auth/me`, {
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -31,24 +31,33 @@ export const AuthProvider = ({ children }) => {
     else setLoading(false);
   }, []);
 
-  const login = async (credential) => {
-    // const res = await axios.post(
-    //     "http://localhost:5000/api/auth/google",
-    //     {
-    //     name: "Veeru",
-    //     email: "veeru@gmail.com",
-    //     googleId: "12345",
-    //     avatar: "photo-url"
-    //     }
-    // );
+  const login = async (data) => {
+    try {
+      let res;
 
-  const res = await axios.post(
-    `${import.meta.env.VITE_API_URL}/api/auth/google`,
-    { credential }
-  );
+      if (typeof data === "string") {
+        // Google Login
+        res = await axios.post(
+          `${import.meta.env.VITE_API_URL}/api/auth/google`,
+          { credential: data }
+        );
+      } else {
+        // Email + Password Login
+        res = await axios.post(
+          `${import.meta.env.VITE_API_URL}/api/auth/login`,
+          data
+        );
+      }
 
-    localStorage.setItem("token", res.data.token);
-    setUser(res.data.user);
+      localStorage.setItem("token", res.data.token);
+      setUser(res.data.user);
+
+      return true;
+
+    } catch (error) {
+      console.log(error.response?.data?.message || error.message);
+      return false;
+    }
   };
 
   const logout = () => {
@@ -56,8 +65,26 @@ export const AuthProvider = ({ children }) => {
     setUser(null);
   };
 
+  const register = async (formData) => {
+    try {
+      const res = await axios.post(
+        `${import.meta.env.VITE_API_URL}/api/auth/register`,
+        formData
+      );
+
+      localStorage.setItem("token", res.data.token);
+      setUser(res.data.user);
+
+      return true;
+
+    } catch (error) {
+      console.log(error.response?.data?.message || error.message);
+      return false;
+    }
+  };
+
   return (
-    <AuthContext.Provider value={{ user, setUser, loading, login, logout }}>
+    <AuthContext.Provider value={{ user, setUser, loading, login, register, logout }}>
       {children}
     </AuthContext.Provider>
   );
