@@ -1,0 +1,138 @@
+const foods = [
+    {
+        "name": "Paneer Tikka Roll",
+        "description": "Juicy paneer tikka wrapped in soft flaky paratha with crunchy laccha pyaaz and tangy chutney.",
+        "price": 99,
+        "discountPrice": 89,
+        "image": "/images/dish1.png",
+        "category": "roll",
+        "isVeg": true,
+        "tags": ["paneer", "roll", "popular"],
+        "keywords": ["paneer roll", "veg roll"],
+        "rating": 4.5,
+        "prepTime": 15,
+        "isFeatured": true
+    },
+    {
+        "name": "Egg Dum Biryani",
+        "description": "Half kg biryani with boiled eggs marinated in aromatic spices.",
+        "price": 319,
+        "discountPrice": 299,
+        "image": "/images/dish2.jpg",
+        "category": "biryani",
+        "isVeg": false,
+        "tags": ["egg", "biryani", "spicy"],
+        "keywords": ["egg biryani", "dum biryani"],
+        "rating": 4.6,
+        "prepTime": 25,
+        "isBestSeller": true
+    },
+    {
+        "name": "Veg Biryani Combo",
+        "description": "Veg Hyderabadi Biryani with crispy corn sticks and two soft drinks.",
+        "price": 619,
+        "discountPrice": 549,
+        "image": "/images/dish3.jpg",
+        "category": "combo",
+        "isVeg": true,
+        "tags": ["combo", "biryani", "family"],
+        "keywords": ["veg combo", "biryani combo"],
+        "rating": 4.7,
+        "prepTime": 30
+    },
+    {
+        "name": "Chicken Burger",
+        "description": "Grilled chicken patty burger with lettuce, mayo and cheese.",
+        "price": 189,
+        "discountPrice": 169,
+        "image": "/images/dish4.jpg",
+        "category": "burger",
+        "isVeg": false,
+        "tags": ["burger", "chicken", "cheesy"],
+        "keywords": ["chicken burger", "burger meal"],
+        "rating": 4.4,
+        "prepTime": 18
+    },
+    {
+        "name": "Veg Cheese Burger",
+        "description": "Crispy veg patty burger loaded with cheese and sauces.",
+        "price": 149,
+        "discountPrice": 129,
+        "image": "/images/dish5.jpg",
+        "category": "burger",
+        "isVeg": true,
+        "tags": ["burger", "veg", "cheese"],
+        "keywords": ["veg burger", "cheese burger"],
+        "rating": 4.3,
+        "prepTime": 15
+    },
+    {
+        "name": "Margherita Pizza",
+        "description": "Classic pizza topped with mozzarella cheese and herbs.",
+        "price": 249,
+        "discountPrice": 229,
+        "image": "/images/dish6.jpg",
+        "category": "pizza",
+        "isVeg": true,
+        "tags": ["pizza", "cheese", "classic"],
+        "keywords": ["veg pizza", "margherita"],
+        "rating": 4.5,
+        "prepTime": 20
+    },
+    {
+        "name": "Paneer Volcano Pizza",
+        "description": "Loaded paneer pizza with spicy sauce and extra cheese.",
+        "price": 329,
+        "discountPrice": 299,
+        "image": "/images/dish7.jpg",
+        "category": "pizza",
+        "isVeg": true,
+        "tags": ["pizza", "paneer", "spicy"],
+        "keywords": ["paneer pizza", "volcano pizza"],
+        "rating": 4.8,
+        "prepTime": 22,
+        "isFeatured": true
+    },
+    {
+        "name": "Cold Coffee",
+        "description": "Refreshing chilled coffee blended with ice cream.",
+        "price": 99,
+        "discountPrice": 89,
+        "image": "/images/dish8.jpg",
+        "category": "drink",
+        "isVeg": true,
+        "tags": ["coffee", "cold", "drink"],
+        "keywords": ["cold coffee", "iced coffee"],
+        "rating": 4.2,
+        "prepTime": 8
+    },
+    {
+        "name": "Chocolate Brownie",
+        "description": "Soft chocolate brownie served warm.",
+        "price": 129,
+        "discountPrice": 119,
+        "image": "/images/dish9.jpg",
+        "category": "dessert",
+        "isVeg": true,
+        "tags": ["dessert", "brownie", "sweet"],
+        "keywords": ["brownie", "chocolate dessert"],
+        "rating": 4.6,
+        "prepTime": 10
+    },
+    {
+        "name": "French Fries",
+        "description": "Golden crispy fries with peri peri seasoning.",
+        "price": 119,
+        "discountPrice": 99,
+        "image": "/images/dish10.jpg",
+        "category": "snacks",
+        "isVeg": true,
+        "tags": ["fries", "snacks", "crispy"],
+        "keywords": ["french fries", "peri peri fries"],
+        "rating": 4.3,
+        "prepTime": 12
+    }
+    
+];
+
+module.exports = foods;

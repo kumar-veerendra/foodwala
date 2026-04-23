@@ -8,6 +8,11 @@ const authRoutes = require("./routes/auth.routes");
 
 const cors = require("cors");
 
+const foodRoutes = require("./routes/food.routes");
+
+const path = require("path");
+
+app.use("/images", express.static(path.join(__dirname, "../public/images")));
 
 app.use(cors());
 
@@ -16,6 +21,8 @@ app.use(express.json());
 
 // routes here
 app.use("/api/auth", authRoutes);
+
+app.use("/api/foods", foodRoutes);
 
 // test route
 app.get("/", (req, res) => {

@@ -87,3 +87,58 @@
   flex-wrap: wrap;
   gap: 20px;
 }
+
+
+/* Filter button in menu*/
+/* App.css */
+
+.menu-title {
+  text-align: center;
+  margin: 25px 0 15px;
+  font-size: 52px;
+  font-weight: 600;
+}
+
+.category-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 20px 0 40px;
+}
+
+.category-btn {
+  border: 1px solid #b33a2f;
+  background: white;
+  color: #b33a2f;
+  padding: 10px 18px;
+  border-radius: 30px;
+  font-size: 15px;
+  font-weight: 500;
+  text-transform: capitalize;
+  transition: all 0.3s ease;
+}
+
+.category-btn:hover {
+  background: #b33a2f;
+  color: white;
+  transform: translateY(-2px);
+}
+
+.category-btn.active {
+  background: #b33a2f;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .menu-title {
+    font-size: 36px;
+  }
+
+  .category-btn {
+    padding: 8px 14px;
+    font-size: 14px;
+  }
+}
+

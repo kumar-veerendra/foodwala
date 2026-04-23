@@ -1,0 +1,405 @@
+/* ============================================================
+   Profile Module — Global Styles
+   Import once in Profile.jsx or your global CSS entry point.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ── Layout ─────────────────────────────────────────────────── */
+.pp-root {
+  min-height: 100vh;
+  background: #f7f7f5;
+  font-family: 'Sora', sans-serif;
+  color: #1a1a1a;
+  padding: 48px 16px 120px;
+}
+.pp-center {
+  max-width: 740px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ── Back button ────────────────────────────────────────────── */
+.pp-back {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 13px; font-weight: 600; color: #888;
+  background: none; border: none; cursor: pointer;
+  font-family: 'Sora', sans-serif; transition: color 0.15s; width: fit-content;
+}
+.pp-back:hover { color: #FF5722; }
+
+/* ── Profile Completeness ───────────────────────────────────── */
+.pp-completeness {
+  background: #fff;
+  border-radius: 16px;
+  padding: 18px 22px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+  border-left: 4px solid #FF5722;
+}
+.pp-complete-header {
+  display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;
+}
+.pp-complete-emoji { font-size: 16px; margin-right: 7px; }
+.pp-complete-label { font-size: 13px; font-weight: 700; color: #1a1a1a; margin-right: 8px; }
+.pp-complete-count { font-size: 12px; font-weight: 500; color: #aaa; }
+.pp-complete-score { font-size: 18px; font-weight: 800; }
+.pp-complete-track {
+  height: 6px; background: #eee; border-radius: 99px; overflow: hidden; margin-bottom: 12px;
+}
+.pp-complete-fill {
+  height: 100%; border-radius: 99px; transition: width 0.6s cubic-bezier(0.34,1.2,0.64,1);
+}
+.pp-complete-missing { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.pp-missing-label { font-size: 11px; font-weight: 700; color: #bbb; text-transform: uppercase; letter-spacing: 0.6px; }
+.pp-missing-item { font-size: 12px; font-weight: 600; color: #888; }
+
+/* ── Hero card ──────────────────────────────────────────────── */
+.pp-hero {
+  background: #fff; border-radius: 22px; padding: 36px 32px 30px;
+  display: flex; align-items: flex-start; gap: 28px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.06); position: relative; overflow: hidden;
+}
+.pp-hero::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 5px;
+  background: linear-gradient(90deg, #FF5722, #FF8A65, #FF5722);
+  background-size: 200% 100%; animation: ppShimmer 3s linear infinite;
+}
+@keyframes ppShimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
+
+.pp-avatar-wrap { position: relative; flex-shrink: 0; }
+.pp-avatar, .pp-avatar-fallback {
+  width: 90px; height: 90px; border-radius: 50%; object-fit: cover; border: 3px solid #FF5722;
+}
+.pp-avatar-fallback {
+  background: linear-gradient(135deg, #FF5722, #FF8A65);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 30px; font-weight: 800; color: #fff;
+}
+.pp-avatar-btn {
+  position: absolute; bottom: 0; right: 0; width: 28px; height: 28px; border-radius: 50%;
+  background: #FF5722; border: 2px solid #fff;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; transition: background 0.15s; color: #fff;
+}
+.pp-avatar-btn:hover { background: #e64a19; }
+
+.pp-hero-info { flex: 1; min-width: 0; padding-top: 4px; }
+.pp-hero-name { font-size: 22px; font-weight: 800; color: #1a1a1a; line-height: 1.15; }
+.pp-hero-email { font-size: 13px; color: #888; margin-top: 4px; font-weight: 500; }
+.pp-hero-bio { font-size: 13px; color: #666; margin-top: 6px; font-weight: 500; font-style: italic; }
+.pp-hero-meta { display: flex; align-items: center; gap: 10px; margin-top: 12px; flex-wrap: wrap; }
+
+.pp-badge {
+  display: inline-flex; align-items: center;
+  background: #FF5722; color: #fff;
+  font-size: 10px; font-weight: 700; padding: 3px 10px; border-radius: 20px;
+  letter-spacing: 0.5px; text-transform: uppercase;
+}
+.pp-phone-chip {
+  display: inline-flex; align-items: center; gap: 5px;
+  background: #f5f5f5; color: #555;
+  font-size: 12px; font-weight: 600; padding: 4px 11px; border-radius: 20px;
+}
+.pp-joined-chip {
+  font-size: 11px; font-weight: 600; color: #bbb;
+}
+.pp-edit-hero-btn {
+  margin-left: auto; display: flex; align-items: center; gap: 6px;
+  background: #FFF3F0; color: #FF5722; border: 1.5px solid #FFCCBC;
+  font-family: 'Sora', sans-serif; font-size: 12.5px; font-weight: 700;
+  padding: 9px 18px; border-radius: 50px; cursor: pointer; transition: all 0.18s;
+  white-space: nowrap; flex-shrink: 0;
+}
+.pp-edit-hero-btn:hover { background: #FF5722; color: #fff; border-color: #FF5722; }
+
+/* ── Cards ──────────────────────────────────────────────────── */
+.pp-card {
+  background: #fff; border-radius: 18px; padding: 24px 28px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+}
+.pp-card-head {
+  display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px;
+}
+.pp-card-title { font-size: 13px; font-weight: 700; color: #aaa; text-transform: uppercase; letter-spacing: 1px; }
+.pp-count-badge {
+  font-size: 11px; font-weight: 700; color: #FF5722;
+  background: #FFF3F0; padding: 3px 10px; border-radius: 20px;
+}
+.pp-editing-pill {
+  font-size: 11px; font-weight: 700; color: #FF5722;
+  background: #FFF3F0; border: 1px solid #FFCCBC;
+  padding: 3px 10px; border-radius: 20px;
+  animation: ppPulse 1.5s ease infinite;
+}
+@keyframes ppPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+/* ── Fields ─────────────────────────────────────────────────── */
+.pp-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+@media (max-width: 520px) { .pp-fields { grid-template-columns: 1fr; } }
+.pp-field-full { grid-column: 1 / -1; }
+
+.pp-field label {
+  display: block; font-size: 11px; font-weight: 700; color: #bbb;
+  text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 6px;
+}
+.pp-field-value {
+  font-size: 14px; font-weight: 600; color: #1a1a1a; padding: 11px 14px;
+  background: #f9f9f9; border-radius: 10px; border: 1.5px solid transparent;
+}
+.pp-field-locked { display: flex; align-items: center; justify-content: space-between; }
+.pp-lock-badge {
+  font-size: 10px; font-weight: 700; color: #43A047;
+  background: #E8F5E9; padding: 2px 8px; border-radius: 20px;
+}
+.pp-input {
+  width: 100%; font-size: 14px; font-weight: 600; color: #1a1a1a;
+  padding: 11px 14px; background: #fff; border-radius: 10px;
+  border: 1.5px solid #FF5722; outline: none; font-family: 'Sora', sans-serif;
+  box-shadow: 0 0 0 3px rgba(255,87,34,0.1);
+}
+.pp-textarea { resize: none; line-height: 1.5; }
+.pp-char-count { font-size: 11px; color: #bbb; font-weight: 600; margin-top: 4px; text-align: right; }
+
+/* ── Addresses ──────────────────────────────────────────────── */
+.pp-addr-list { display: flex; flex-direction: column; gap: 10px; }
+.pp-addr-item {
+  display: flex; align-items: flex-start; justify-content: space-between; gap: 12px;
+  padding: 14px 15px; background: #f9f9f9; border-radius: 12px;
+  border: 1.5px solid #f0f0f0; transition: border-color 0.15s;
+}
+.pp-addr-item:hover { border-color: #FFCCBC; }
+.pp-addr-item.is-default { border-color: #FF5722; background: #FFF9F7; }
+.pp-addr-left { display: flex; align-items: flex-start; gap: 11px; }
+.pp-addr-icon {
+  width: 34px; height: 34px; border-radius: 9px; background: #FFF3F0;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: #FF5722;
+}
+.pp-addr-label-row { display: flex; align-items: center; gap: 7px; margin-bottom: 3px; }
+.pp-addr-label { font-size: 12px; font-weight: 700; color: #FF5722; }
+.pp-default-badge {
+  display: inline-flex; align-items: center; gap: 3px;
+  font-size: 10px; font-weight: 700; color: #FF5722;
+  background: #FFE0D6; padding: 1px 7px; border-radius: 20px;
+}
+.pp-addr-text { font-size: 13px; font-weight: 500; color: #555; line-height: 1.4; }
+.pp-set-default-btn {
+  background: none; border: none; cursor: pointer; padding: 0;
+  font-family: 'Sora', sans-serif; font-size: 11px; font-weight: 700;
+  color: #FF5722; margin-top: 5px; text-decoration: underline; text-underline-offset: 2px;
+}
+.pp-addr-del {
+  background: none; border: none; cursor: pointer; padding: 4px;
+  color: #ccc; transition: color 0.15s; flex-shrink: 0;
+}
+.pp-addr-del:hover { color: #e53935; }
+.pp-add-addr {
+  display: flex; align-items: center; gap: 8px; width: 100%;
+  padding: 12px 15px; border-radius: 12px; border: 1.5px dashed #ddd; background: none;
+  font-family: 'Sora', sans-serif; font-size: 13px; font-weight: 600; color: #aaa;
+  cursor: pointer; transition: all 0.15s;
+}
+.pp-add-addr:hover { border-color: #FF5722; color: #FF5722; background: #FFF3F0; }
+
+/* ── Security ───────────────────────────────────────────────── */
+.pp-security-row {
+  display: flex; align-items: center; justify-content: space-between;
+  cursor: pointer; padding: 4px 0;
+}
+.pp-security-left { display: flex; align-items: center; gap: 12px; }
+.pp-security-icon {
+  width: 36px; height: 36px; border-radius: 10px; background: #f5f5f5;
+  display: flex; align-items: center; justify-content: center; color: #555;
+}
+.pp-security-label { font-size: 14px; font-weight: 700; color: #1a1a1a; }
+.pp-security-sub { font-size: 12px; font-weight: 500; color: #aaa; margin-top: 2px; }
+.pp-security-toggle {
+  font-family: 'Sora', sans-serif; font-size: 12.5px; font-weight: 700;
+  color: #FF5722; background: #FFF3F0; border: 1.5px solid #FFCCBC;
+  padding: 7px 16px; border-radius: 50px; cursor: pointer; transition: all 0.15s;
+}
+.pp-security-toggle:hover { background: #FF5722; color: #fff; border-color: #FF5722; }
+.pp-pw-form { margin-top: 20px; border-top: 1px solid #f5f5f5; padding-top: 20px; }
+.pp-strength-bar { display: flex; align-items: center; gap: 8px; margin-top: 8px; }
+.pp-strength-track { display: flex; gap: 4px; flex: 1; }
+.pp-strength-seg { flex: 1; height: 4px; border-radius: 99px; transition: background 0.25s; }
+
+/* ── Notifications ──────────────────────────────────────────── */
+.pp-notif-list { display: flex; flex-direction: column; }
+.pp-notif-row {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 0; border-bottom: 1px solid #f5f5f5;
+}
+.pp-notif-row:last-child { border-bottom: none; }
+.pp-notif-left { display: flex; align-items: center; gap: 12px; }
+.pp-notif-emoji { font-size: 20px; }
+.pp-notif-label { font-size: 14px; font-weight: 700; color: #1a1a1a; }
+.pp-notif-sub { font-size: 12px; font-weight: 500; color: #aaa; margin-top: 2px; }
+
+/* ── Danger Zone ────────────────────────────────────────────── */
+.pp-danger-card { border: 1.5px solid #fde8e8; }
+.pp-logout {
+  display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%;
+  padding: 14px; border-radius: 14px; border: 1.5px solid #fde8e8;
+  background: #fff5f5; font-family: 'Sora', sans-serif;
+  font-size: 14px; font-weight: 700; color: #e53935; cursor: pointer; transition: all 0.18s;
+}
+.pp-logout:hover { background: #e53935; color: #fff; border-color: #e53935; }
+.pp-logout-all {
+  display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%;
+  padding: 11px; border-radius: 12px; border: 1.5px solid #eee;
+  background: #f9f9f9; font-family: 'Sora', sans-serif;
+  font-size: 13px; font-weight: 600; color: #888; cursor: pointer; transition: all 0.18s;
+}
+.pp-logout-all:hover { background: #efefef; color: #333; }
+.pp-delete-section { margin-top: 18px; border-top: 1px solid #fde8e8; padding-top: 16px; }
+.pp-delete-header { margin-bottom: 12px; }
+.pp-delete-title { display: block; font-size: 13px; font-weight: 700; color: #e53935; margin-bottom: 4px; }
+.pp-delete-sub { font-size: 12px; font-weight: 500; color: #aaa; }
+.pp-delete-btn {
+  font-family: 'Sora', sans-serif; font-size: 12.5px; font-weight: 700;
+  color: #e53935; background: none; border: 1.5px solid #fde8e8;
+  padding: 9px 18px; border-radius: 50px; cursor: pointer; transition: all 0.18s;
+}
+.pp-delete-btn:hover { background: #fde8e8; }
+.pp-delete-warn { font-size: 13px; font-weight: 600; color: #555; margin-bottom: 10px; }
+
+/* ── Modal ──────────────────────────────────────────────────── */
+.pp-overlay {
+  position: fixed; inset: 0; background: rgba(0,0,0,0.40);
+  display: flex; align-items: flex-end; justify-content: center;
+  z-index: 1000; animation: ppFadeIn 0.2s ease;
+}
+@keyframes ppFadeIn { from { opacity: 0; } to { opacity: 1; } }
+@media (min-width: 600px) { .pp-overlay { align-items: center; padding: 24px; } }
+
+.pp-modal {
+  background: #fff; width: 100%; max-width: 480px;
+  border-radius: 24px 24px 0 0; padding: 28px 24px 36px;
+  box-shadow: 0 -8px 40px rgba(0,0,0,0.15);
+  animation: ppSlideUp 0.3s cubic-bezier(0.34,1.2,0.64,1);
+}
+@media (min-width: 600px) { .pp-modal { border-radius: 22px; padding: 32px 28px; } }
+@keyframes ppSlideUp {
+  from { opacity: 0; transform: translateY(60px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.pp-drag-handle {
+  width: 40px; height: 4px; border-radius: 99px; background: #e0e0e0;
+  margin: 0 auto 22px;
+}
+@media (min-width: 600px) { .pp-drag-handle { display: none; } }
+
+.pp-modal-title { font-size: 18px; font-weight: 800; color: #1a1a1a; margin-bottom: 3px; }
+.pp-modal-sub { font-size: 13px; color: #aaa; font-weight: 500; margin-bottom: 20px; }
+
+.pp-label-row { display: flex; gap: 8px; margin-bottom: 18px; flex-wrap: wrap; }
+.pp-label-pill {
+  display: flex; align-items: center; gap: 6px;
+  padding: 7px 14px; border-radius: 50px; border: 1.5px solid #eee;
+  font-family: 'Sora', sans-serif; font-size: 12.5px; font-weight: 600; color: #888;
+  background: #f9f9f9; cursor: pointer; transition: all 0.15s;
+}
+.pp-label-pill.active { background: #FFF3F0; border-color: #FF5722; color: #FF5722; }
+.pp-label-pill:hover:not(.active) { border-color: #ccc; color: #555; }
+
+.pp-mfield { margin-bottom: 14px; }
+.pp-mfield label {
+  display: block; font-size: 11px; font-weight: 700; color: #bbb;
+  text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 6px;
+}
+.pp-minput {
+  width: 100%; font-size: 14px; font-weight: 500; color: #1a1a1a;
+  padding: 12px 14px; background: #f9f9f9; border-radius: 11px;
+  border: 1.5px solid #eee; outline: none; font-family: 'Sora', sans-serif;
+  transition: border-color 0.18s, box-shadow 0.18s, background 0.18s;
+}
+.pp-minput:focus { border-color: #FF5722; background: #fff; box-shadow: 0 0 0 3px rgba(255,87,34,0.1); }
+.pp-minput.err { border-color: #e53935; box-shadow: 0 0 0 3px rgba(229,57,53,0.1); }
+.pp-minput::placeholder { color: #ccc; }
+.pp-ferr { font-size: 11.5px; color: #e53935; font-weight: 600; margin-top: 5px; }
+
+.pp-mactions { display: flex; gap: 10px; margin-top: 22px; }
+.pp-mcancel {
+  flex: 1; padding: 13px; border-radius: 12px; border: 1.5px solid #eee;
+  background: #f9f9f9; font-family: 'Sora', sans-serif;
+  font-size: 14px; font-weight: 700; color: #888; cursor: pointer; transition: all 0.15s;
+}
+.pp-mcancel:hover { background: #efefef; color: #555; }
+.pp-msubmit {
+  flex: 2; padding: 13px; border-radius: 12px; border: none;
+  background: #FF5722; font-family: 'Sora', sans-serif;
+  font-size: 14px; font-weight: 700; color: #fff; cursor: pointer; transition: background 0.15s;
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+}
+.pp-msubmit:hover:not(:disabled) { background: #e64a19; }
+.pp-msubmit:disabled { background: #FFCCBC; cursor: not-allowed; }
+
+/* ── Save Bar ───────────────────────────────────────────────── */
+.pp-save-bar {
+  position: fixed; bottom: 28px; left: 50%; transform: translateX(-50%);
+  background: #1a1a1a; border-radius: 50px; display: flex; align-items: center; gap: 16px;
+  padding: 12px 20px 12px 24px; box-shadow: 0 8px 32px rgba(0,0,0,0.22); z-index: 999;
+  animation: ppBarUp 0.25s ease;
+}
+@keyframes ppBarUp {
+  from { opacity:0; transform: translateX(-50%) translateY(20px); }
+  to   { opacity:1; transform: translateX(-50%) translateY(0); }
+}
+.pp-save-text { font-size: 13px; font-weight: 600; color: #fff; white-space: nowrap; }
+.pp-save-cancel {
+  background: rgba(255,255,255,0.12); border: none; border-radius: 50px;
+  font-family: 'Sora', sans-serif; font-size: 12.5px; font-weight: 600; color: #fff;
+  padding: 8px 16px; cursor: pointer; transition: background 0.15s;
+}
+.pp-save-cancel:hover { background: rgba(255,255,255,0.22); }
+.pp-save-btn {
+  background: #FF5722; border: none; border-radius: 50px;
+  font-family: 'Sora', sans-serif; font-size: 12.5px; font-weight: 700; color: #fff;
+  padding: 8px 20px; cursor: pointer; transition: background 0.15s;
+  display: flex; align-items: center; gap: 8px;
+}
+.pp-save-btn:hover { background: #e64a19; }
+
+/* ── Toast ──────────────────────────────────────────────────── */
+.pp-toast {
+  position: fixed; top: 24px; right: 24px; z-index: 2000;
+  padding: 13px 20px; border-radius: 14px;
+  font-family: 'Sora', sans-serif; font-size: 13px; font-weight: 700;
+  display: flex; align-items: center; gap: 10px;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.15);
+  animation: ppToastIn 0.25s ease;
+}
+.pp-toast.success { background: #1a1a1a; color: #fff; }
+.pp-toast.error   { background: #e53935; color: #fff; }
+@keyframes ppToastIn { from { opacity:0; transform:translateY(-12px); } to { opacity:1; transform:translateY(0); } }
+
+/* ── Skeleton ───────────────────────────────────────────────── */
+.pp-bone {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e8e8e8 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: ppSkeleton 1.4s ease infinite;
+}
+@keyframes ppSkeleton {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* ── Spinner ────────────────────────────────────────────────── */
+.pp-spin {
+  width: 16px; height: 16px;
+  border: 2.5px solid rgba(255,255,255,0.35);
+  border-top-color: #fff; border-radius: 50%;
+  animation: ppSpin 0.7s linear infinite;
+}
+.pp-spin-dark {
+  border-color: rgba(255,255,255,0.35);
+  border-top-color: #fff;
+}
+@keyframes ppSpin { to { transform: rotate(360deg); } }
