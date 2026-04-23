@@ -13,7 +13,7 @@ Order your favourite meals, track deliveries in real-time, and manage everything
 [![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-47A248?logo=mongodb&logoColor=white)](https://mongodb.com)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
-[Live Demo](#) · [Report Bug](issues) · [Request Feature](issues)
+[Live Demo](https://foodwala-two.vercel.app/) · [Report Bug](issues) · [Request Feature](issues)
 
 </div>
 
