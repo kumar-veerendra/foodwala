@@ -16,7 +16,7 @@ function SingleFood() {
       try {
         setLoading(true);
 
-        await axios.get(`${import.meta.env.VITE_API_URL}/api/foods/${slug}`);
+        const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/foods/${slug}`);
 
         setFood(res.data.food);
       } catch (error) {
