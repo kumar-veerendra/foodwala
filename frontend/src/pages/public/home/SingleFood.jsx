@@ -16,9 +16,7 @@ function SingleFood() {
       try {
         setLoading(true);
 
-        const res = await axios.get(
-          `http://localhost:5000/api/foods/${slug}`
-        );
+        await axios.get(`${import.meta.env.VITE_API_URL}/api/foods/${slug}`);
 
         setFood(res.data.food);
       } catch (error) {
@@ -66,7 +64,7 @@ function SingleFood() {
         <div className="col-md-6">
           <div className="border rounded-4 p-3 bg-white shadow-sm">
             <img
-              src={`http://localhost:5000${food.image[0]}`}
+              src={`${import.meta.env.VITE_API_URL}${food.image[0]}`}
               alt={food.name}
               className="img-fluid rounded-4"
               style={{
