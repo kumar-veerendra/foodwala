@@ -37,7 +37,7 @@ function Menu() {
 
         setActiveCategory(category || "all");
 
-        let url = "http://localhost:5000/api/foods?";
+        let url = `${import.meta.env.VITE_API_URL}/api/foods?`;
         const query = [];
 
         if (search) query.push(`search=${search}`);
@@ -101,7 +101,7 @@ function Menu() {
             <DishCard
               key={item._id}
               slug={item.slug}
-              image={`http://localhost:5000${item.image[0]}`}
+              image={`${import.meta.env.VITE_API_URL}${item.image[0]}`}
               name={item.name}
               newPrice={`₹${item.discountPrice || item.price}`}
               oldPrice={`₹${item.price}`}
