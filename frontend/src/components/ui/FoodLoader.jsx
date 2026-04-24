@@ -43,6 +43,24 @@ export const BoilLoader = () => (
   </div>
 );
 
-export const PageLoader = ({ message = "Finding the best food for you…" }) => (/* full-page version */);
+export const PageLoader = ({ message = "Finding the best food for you…" }) => (
+  <div style={{ display:"flex", flexDirection:"column", alignItems:"center", gap:20, padding:"40px 32px", borderRadius:12, border:"0.5px solid rgba(0,0,0,0.08)", background:"#fff", minWidth:220 }}>
+    <style>{`
+      @keyframes brandpulse { 0%,100%{box-shadow:0 0 0 0 rgba(154,6,6,0.35)} 60%{box-shadow:0 0 0 14px rgba(154,6,6,0)} }
+      @keyframes progressfill { 0%{width:0%;margin-left:0} 50%{width:100%;margin-left:0} 51%{width:100%;margin-left:0} 100%{width:0%;margin-left:100%} }
+    `}</style>
+    <div style={{ width:52, height:52, background:"#9a0606", borderRadius:"50%", display:"flex", alignItems:"center", justifyContent:"center", animation:"brandpulse 1.6s ease-in-out infinite" }}>
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+        <circle cx="12" cy="10" r="3" fill="white" opacity="0.95"/>
+        <path d="M5 20c0-3.87 3.13-7 7-7s7 3.13 7 7" stroke="white" strokeWidth="2" strokeLinecap="round" fill="none" opacity="0.85"/>
+        <path d="M12 4v2M8 5.5l1 1.73M16 5.5l-1 1.73" stroke="white" strokeWidth="1.5" strokeLinecap="round" opacity="0.6"/>
+      </svg>
+    </div>
+    <div style={{ width:160, height:3, borderRadius:99, background:"rgba(154,6,6,0.12)", overflow:"hidden" }}>
+      <div style={{ height:"100%", borderRadius:99, background:"linear-gradient(90deg,#6b0404,#9a0606,#c0392b)", animation:"progressfill 1.8s ease-in-out infinite" }}/>
+    </div>
+    <p style={{ fontSize:13, color:"#888", letterSpacing:"0.04em", margin:0 }}>{message}</p>
+  </div>
+);
 
 export default ForkLoader;
