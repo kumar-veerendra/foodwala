@@ -95,7 +95,7 @@ function Menu() {
       {/* Loading */}
       {loading ? (
         // <p className="text-center">Loading delicious food...</p>
-        <div className="flex justify-center items-center py-16">
+        <div style={{ display:"flex", justifyContent:"center", alignItems:"center", minHeight:"40vh" }}>
           <BoilLoader />
         </div>
       ) : foods.length === 0 ? (
