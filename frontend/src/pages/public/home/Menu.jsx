@@ -7,6 +7,8 @@ import { useLocation, useNavigate } from "react-router-dom";
 import DishCard from "../../../components/dish/DishCard";
 import "../../../App.css";
 
+import { BoilLoader } from "../../../components/ui/FoodLoader";
+
 function Menu() {
   const [foods, setFoods] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -92,7 +94,10 @@ function Menu() {
 
       {/* Loading */}
       {loading ? (
-        <p className="text-center">Loading delicious food...</p>
+        // <p className="text-center">Loading delicious food...</p>
+        <div className="flex justify-center items-center py-16">
+          <BoilLoader />
+        </div>
       ) : foods.length === 0 ? (
         <p className="text-center">No food found 🍽️</p>
       ) : (

@@ -4,6 +4,8 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams, Link } from "react-router-dom";
 
+import ForkLoader from "../../../components/ui/FoodLoader";
+
 function SingleFood() {
   const { slug } = useParams();
 
@@ -30,7 +32,11 @@ function SingleFood() {
   }, [slug]);
 
   if (loading) {
-    return <h2 style={{ textAlign: "center", marginTop: "60px" }}>Loading...</h2>;
+    return (
+      <div style={{ display: "flex", justifyContent: "center", alignItems: "center", minHeight: "60vh" }}>
+        <ForkLoader />
+      </div>
+    );
   }
 
   if (!food) {
